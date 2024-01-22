@@ -31,7 +31,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package -P prod --file pom.xml
 
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'
